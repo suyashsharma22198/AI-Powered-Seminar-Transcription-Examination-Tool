@@ -59,7 +59,7 @@ with tabs[1]:
         st.text("Generating summary... Please wait.")
         try:
             response = client.models.generate_content(
-                model="gemini-3-flash-preview",
+                model="gemini-1.5-flash",
                 contents=f"Summarize the following text:\n{transcription}"
             )
             summary = getattr(response, 'text', None) or getattr(response, 'result', None) or "No summary generated."
@@ -80,7 +80,7 @@ with tabs[2]:
         st.text("Generating MCQs... Please wait.")
         try:
             response = client.models.generate_content(
-                model="gemini-3-flash-preview",
+                model="gemini-1.5-flash",
                 contents=f"Generate multiple-choice questions based on the following text:\n{transcription}"
             )
             mcqs = getattr(response, 'text', None) or getattr(response, 'result', None) or "No MCQs generated."
